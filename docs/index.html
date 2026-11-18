@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Nova · AI Study Assistant — Phoenixa Analytics</title>
+<meta name="description" content="Nova: an AI study assistant that runs entirely on your own machine. Flutter, n8n, Ollama and MongoDB on Docker Compose.">
+<meta property="og:image" content="img/banner.png">
+<link rel="icon" href="img/screens/01-sign-in.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--acc:#4B4DED;--ink:#171A2C;--ink2:#3B4057;--muted:#646A80;--line:#E2E4EE;--bg:#F4F5FA}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:'Plus Jakarta Sans',system-ui,sans-serif;line-height:1.55}
+  a{color:var(--acc)}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  header{background:var(--acc);color:#fff;padding:54px 0 64px;position:relative;overflow:hidden}
+  header::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 82% 18%,rgba(255,255,255,.14),transparent 52%)}
+  .brand{display:flex;align-items:center;gap:14px;position:relative;z-index:1}
+  .brand img{height:56px}
+  .n1{font-size:17px;font-weight:800;letter-spacing:.3em;padding-left:.3em}
+  .n2{font-size:10px;font-weight:600;letter-spacing:.44em;padding-left:.44em;color:#DCDDFD;margin-top:5px}
+  h1{position:relative;z-index:1;font-size:60px;line-height:1.02;letter-spacing:-.035em;margin:30px 0 14px;font-weight:800}
+  .lede{position:relative;z-index:1;font-size:21px;max-width:660px;color:#EDEDFF;font-weight:500}
+  .meta{position:relative;z-index:1;margin-top:26px;font-size:15px;color:#C9CAFB}
+
+  .hero{display:flex;gap:46px;align-items:center;position:relative;z-index:1}
+  .herotext{flex:1;min-width:0}
+  .herogif{width:258px;flex:none;border-radius:26px;border:1px solid rgba(255,255,255,.3);
+           box-shadow:0 20px 54px rgba(10,12,40,.4)}
+  @media(max-width:860px){.hero{flex-direction:column;align-items:flex-start}.herogif{width:220px}}
+  main{padding:44px 0 64px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(248px,1fr));gap:18px;margin:0 0 42px}
+  .card{display:block;background:#fff;border-radius:20px;padding:22px;text-decoration:none;color:inherit;
+        box-shadow:0 1px 2px rgba(23,26,44,.05),0 6px 18px rgba(23,26,44,.05);transition:transform .15s,box-shadow .15s}
+  .card:hover{transform:translateY(-2px);box-shadow:0 2px 4px rgba(23,26,44,.07),0 14px 30px rgba(23,26,44,.09)}
+  .card .k{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--acc)}
+  .card h2{font-size:19px;margin:9px 0 7px;font-weight:700}
+  .card p{margin:0;font-size:14.5px;color:var(--muted)}
+  h3{font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:38px 0 16px;font-weight:700}
+  .screens{display:flex;gap:14px;overflow-x:auto;padding-bottom:8px}
+  .screens img{height:420px;border-radius:20px;box-shadow:0 2px 6px rgba(23,26,44,.08),0 14px 34px rgba(23,26,44,.1);flex:none}
+  .stack{background:#fff;border-radius:20px;padding:24px;box-shadow:0 1px 2px rgba(23,26,44,.05),0 6px 18px rgba(23,26,44,.05)}
+  .stack ul{margin:0;padding-left:20px;color:var(--ink2);font-size:15px}
+  .stack li{margin:7px 0}
+  footer{border-top:1px solid var(--line);padding:26px 0 44px;font-size:13.5px;color:var(--muted)}
+  footer img{height:16px;vertical-align:-3px;margin-right:7px;opacity:.85}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap hero">
+   <div class="herotext">
+    <div class="brand">
+      <img src="brand/mark-white.png" alt="Phoenixa Analytics"/>
+      <div><div class="n1">PHOENIXA</div><div class="n2">ANALYTICS</div></div>
+    </div>
+    <h1>Nova</h1>
+    <p class="lede">An AI study assistant that runs entirely on your own machine. Upload a course note, read the summary, take a quiz built from that note, and get study advice written for the answers you got wrong.</p>
+    <p class="meta">Flutter · n8n · Ollama · MongoDB · Docker Compose — built by Sümeyra Kiğılı Şengüner</p>
+   </div>
+   <img class="herogif" src="img/nova-demo.gif" alt="Nova in use: sign in, upload a note, choose the difficulty, answer the questions"/>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="cards">
+    <a class="card" href="presentation/">
+      <div class="k">Start here</div>
+      <h2>The presentation →</h2>
+      <p>16 slides in your browser: where Nova starts, the architecture, every workflow and how the quizzes are verified. Arrow keys to move.</p>
+    </a>
+    <a class="card" href="prototype/Nova-Prototype.html">
+      <div class="k">Try it</div>
+      <h2>Clickable prototype →</h2>
+      <p>The whole flow on sample data — sign in, upload a note, take a quiz, read the advice. Nothing to install.</p>
+    </a>
+    <!-- When the repository exists, replace USERNAME/REPO below with its address. -->
+    <a class="card" href="https://github.com/USERNAME/REPO#readme">
+      <div class="k">Read</div>
+      <h2>The write-up →</h2>
+      <p>What the case brief asked for, the architecture, the API, how a 3B local model is made reliable, security and tests.</p>
+    </a>
+    <a class="card" href="DECISIONS.md">
+      <div class="k">Engineering</div>
+      <h2>Decisions →</h2>
+      <p>Why a local model, why n8n holds the logic, how quiz accuracy is defended, and what each choice cost.</p>
+    </a>
+  </div>
+
+  <h3>The interface</h3>
+  <div class="screens">
+    <img src="img/screens/02-dashboard.png" alt="Dashboard"/>
+    <img src="img/screens/03-summary.png" alt="Note summary"/>
+    <img src="img/screens/04-quiz-setup.png" alt="Quiz setup"/>
+    <img src="img/screens/05-quiz.png" alt="Quiz"/>
+    <img src="img/screens/06-result.png" alt="Result and advice"/>
+    <img src="img/screens/07-ask-nova.png" alt="Ask Nova"/>
+    <img src="img/screens/08-memory.png" alt="Nova Memory"/>
+    <img src="img/screens/09-statistics.png" alt="Statistics"/>
+  </div>
+
+  <h3>How it fits together</h3>
+  <div class="stack">
+    <ul>
+      <li><b>Flutter</b> owns the screens — one codebase for web and Android, English and Turkish.</li>
+      <li><b>n8n</b> holds the business logic as eight workflows: every request walks through validation, authorisation, the model call and the database write as nodes you can watch execute.</li>
+      <li><b>Ollama</b> runs the language model locally, so course notes never leave the machine.</li>
+      <li><b>MongoDB</b> keeps each student's data apart, and correct answers stay on the server until grading.</li>
+      <li><b>Docker Compose</b> starts all of it with one script that detects the GPU, imports the workflows and warms the model.</li>
+    </ul>
+  </div>
+</main>
+
+<footer class="wrap">
+  <img src="img/phoenixa-analytics.png" alt=""/>
+  © 2026 Sümeyra Kiğılı Şengüner · Phoenixa Analytics · All rights reserved — see the repository LICENSE.
+</footer>
+</body>
+</html>
